@@ -13,10 +13,9 @@ interface UpdateDao {
     @Insert
     fun addCurrentVersion(version: UpdateVersion)
 
-//    @Update
     @Query("Update previous_build SET version = :ver where id = :tid")
     fun updateVersion(tid: Int, ver: String)
 
     @Query("select version from previous_build")
-    fun getVersion(): String
+    fun getVersion(): List<String>
 }

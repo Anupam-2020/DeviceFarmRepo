@@ -39,30 +39,50 @@ class MainActivity : AppCompatActivity() {
         val currentVersion = BuildConfig.VERSION_NAME
 
         scp.launch {
-//            var previousVersion = localVersionRepository.getVersionDetails()
+            var previousVersionList = localVersionRepository.getVersionDetails()
 
-            if (localVersionRepository.getVersionDetails() == null) {
+            if (localVersionRepository.getVersionDetails().isEmpty() ) {
                 val vers = UpdateVersion(0, "1.0")
                 localVersionRepository.addVersionDetails(vers)
-            } else {
-                var previousVersion = localVersionRepository.getVersionDetails()
+                Log.i("Version", "$currentVersion, $previousVersionList")
+            }
+            if(currentVersion !in previousVersionList){
+                val vers = UpdateVersion(0, currentVersion)
+                localVersionRepository.addVersionDetails(vers)
+                Log.i("Version", "$currentVersion, $previousVersionList")
                 withContext(Dispatchers.Main) {
-                    if (currentVersion != previousVersion) {
                         AlertDialog.Builder(this@MainActivity)
                             .setTitle("Update Dialogue")
                             .setMessage("App has been updated")
                             .setPositiveButton("Okay") { _, _ -> }
                             .create().show()
 
-                        val vers = UpdateVersion(0, currentVersion)
-
-                        scp.launch {
-                            localVersionRepository.updateDetailsVersion(0, currentVersion)
-                        }
-                        Log.i("Version", "$currentVersion, $previousVersion")
-                    }
                 }
+                Log.i("Version", "$currentVersion, $previousVersionList")
             }
+            else{
+                Log.i("Version", "$currentVersion, $previousVersionList")
+
+            }
+//            else {
+//
+//                localVersionRepository.updateDetailsVersion(0, BuildConfig.VERSION_NAME)
+//                Log.i("Version", "$currentVersion, $previousVersionList")
+//
+//
+//                withContext(Dispatchers.Main) {
+//                    if (currentVersion != previousVersion) {
+//                        AlertDialog.Builder(this@MainActivity)
+//                            .setTitle("Update Dialogue")
+//                            .setMessage("App has been updated")
+//                            .setPositiveButton("Okay") { _, _ -> }
+//                            .create().show()
+//
+//                        val vers = UpdateVersion(0, currentVersion)
+//
+//                    }
+//                }
+//            }
         }
 
 //        appUpdateManager = AppUpdateManagerFactory.create(this)
