@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_settings">Ajustes</string>
+    <string name="first_fragment_label">fragmento primero</string>
+    <string name="second_fragment_label">fragmento dos</string>
+    <string name="next">despues</string>
+    <string name="previous">antes</string>
+    <string name="Name">Nombre</string>
+    <string name="Username">Nombre de usuario</string>
+    <string name="Password">Contraseña</string>
+    <string name="Login">Acceso</string>
+    <string name="frgt_pswd">Has olvidado tu contraseña?</string>
+    <string name="Lng_pref">Preferencia de Idioma</string>
+    <string name="Upload_pic">Tomar una foto para subir</string>
+    <string name="Doctors">Doctores</string>
+    <string name="Eng">Ingles</string>
+    <string name="Esp">Español</string>
+    <string name="Address">Dirección</string>
+    <string name="Hospital_List">Lista de hospitales</string>
+    <string name="Pick_SD">ELIGE DE TARJETA SD</string>
+
+    <string name="welcome_to_device_farm">Bienvenido a Device Farm</string>
+    <string name="Hospital_Desc">el hospital ofrece instalaciones de vanguardia</string>
+    <string name="uplaod_from_gallary">Subir desde la galería</string>
+    <string name="exit">" Salida"</string>
+    <string name="Switch">cambiar</string>
+
+
+</resources>
